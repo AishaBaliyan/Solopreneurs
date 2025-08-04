@@ -31,26 +31,23 @@
 
         /* Y Combinator Badge */
         .yc-badge {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             background: rgba(0, 0, 0, 0.9);
-            padding: 0.8rem 1.5rem;
+            padding: 0.8rem 1.2rem;
             border-radius: 25px;
             border: 1px solid rgba(255, 165, 0, 0.4);
             backdrop-filter: blur(10px);
-            z-index: 1001;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
             animation: glow 2s ease-in-out infinite alternate;
+            margin-top: 1rem;
         }
 
         .yc-badge-text {
             color: #ff8c00;
             font-size: 0.9rem;
             font-weight: 600;
+            white-space: nowrap;
         }
 
         .yc-logo {
@@ -520,18 +517,6 @@
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .yc-badge {
-                top: 15px;
-                padding: 0.6rem 1rem;
-                font-size: 0.8rem;
-            }
-            
-            .yc-logo {
-                width: 25px;
-                height: 25px;
-                font-size: 0.8rem;
-            }
-
             .nav-links {
                 display: none;
             }
@@ -556,12 +541,6 @@
     </style>
 </head>
 <body>
-    <!-- Y Combinator Badge -->
-    <div class="yc-badge">
-        <span class="yc-badge-text">Backed by</span>
-        <div class="yc-logo">YC</div>
-    </div>
-
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
@@ -582,6 +561,11 @@
             <h1>iOS Apps Built by AI</h1>
             <p>We build, publish, and market iOS apps for solopreneurs using cutting-edge AI agents. Focus on your idea while we handle everything else.</p>
             <a href="#contact" class="cta-button">Start Your App Journey</a>
+            <div class="yc-badge">
+                <span class="yc-badge-text">Backed by</span>
+                <div class="yc-logo">Y</div>
+                <span class="yc-badge-text">Combinator</span>
+            </div>
         </div>
     </section>
 
