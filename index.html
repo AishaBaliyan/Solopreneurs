@@ -103,6 +103,67 @@
             animation: float 20s ease-in-out infinite;
         }
 
+        /* Floating Elements Animation */
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: linear-gradient(45deg, #00f5ff, #0080ff);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: floatUp 15s infinite linear;
+        }
+
+        .floating-element:nth-child(1) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: -5s;
+        }
+
+        .floating-element:nth-child(2) {
+            left: 20%;
+            width: 30px;
+            height: 30px;
+            animation-delay: -2s;
+        }
+
+        .floating-element:nth-child(3) {
+            left: 70%;
+            width: 25px;
+            height: 25px;
+            animation-delay: -8s;
+        }
+
+        .floating-element:nth-child(4) {
+            left: 80%;
+            width: 15px;
+            height: 15px;
+            animation-delay: -3s;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.1;
+            }
+            90% {
+                opacity: 0.1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
@@ -211,6 +272,70 @@
             background-clip: text;
         }
 
+        /* Architecture Diagram */
+        .architecture-diagram {
+            background: linear-gradient(135deg, #001122, #000);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            border: 1px solid rgba(0, 245, 255, 0.3);
+        }
+
+        .architecture-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .arch-node {
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(0, 128, 255, 0.1));
+            border: 2px solid rgba(0, 245, 255, 0.3);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            min-width: 150px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .arch-node:hover {
+            transform: translateY(-5px);
+            border-color: #00f5ff;
+            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.2);
+        }
+
+        .arch-node::after {
+            content: '→';
+            position: absolute;
+            right: -2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #00f5ff;
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .arch-node:last-child::after {
+            display: none;
+        }
+
+        .arch-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #00f5ff, #0080ff);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.2rem;
+            color: #000;
+            font-weight: bold;
+        }
+
         /* Stats Section */
         .stats {
             background: linear-gradient(135deg, #001122, #000);
@@ -239,6 +364,23 @@
             text-align: center;
             border: 1px solid rgba(0, 245, 255, 0.3);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.1), transparent);
+            transition: left 0.8s;
+        }
+
+        .stat-card:hover::before {
+            left: 100%;
         }
 
         .stat-card:hover {
@@ -317,6 +459,80 @@
             color: #00f5ff;
         }
 
+        /* Process Flow Diagram */
+        .process-flow-diagram {
+            background: linear-gradient(135deg, #000511, #001122);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+        }
+
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .flow-step {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.5rem;
+            background: rgba(0, 245, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .flow-step:hover {
+            transform: translateX(10px);
+            border-color: rgba(0, 245, 255, 0.4);
+            box-shadow: 0 5px 20px rgba(0, 245, 255, 0.1);
+        }
+
+        .flow-step::after {
+            content: '↓';
+            position: absolute;
+            bottom: -1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #00f5ff;
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .flow-step:last-child::after {
+            display: none;
+        }
+
+        .flow-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #00f5ff, #0080ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #000;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .flow-content h3 {
+            color: #00f5ff;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .flow-content p {
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
         /* Process Section */
         .process-steps {
             display: grid;
@@ -342,11 +558,84 @@
             font-weight: bold;
             color: #000;
             margin: 0 auto 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-number::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .process-step:hover .step-number::before {
+            left: 100%;
         }
 
         .process-step h3 {
             margin-bottom: 1rem;
             color: #00f5ff;
+        }
+
+        /* Comparison Chart */
+        .comparison-section {
+            background: linear-gradient(135deg, #000811, #001122);
+            margin: 5rem 0;
+            padding: 5rem 2rem;
+            border-radius: 20px;
+        }
+
+        .comparison-table {
+            background: rgba(0, 245, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            margin-top: 2rem;
+        }
+
+        .comparison-header {
+            background: linear-gradient(45deg, #00f5ff, #0080ff);
+            color: #000;
+            padding: 1.5rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 1rem;
+            font-weight: bold;
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(0, 245, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .comparison-row:hover {
+            background: rgba(0, 245, 255, 0.05);
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .feature-name {
+            color: #fff;
+        }
+
+        .sololaunch-feature {
+            color: #00ff80;
+            font-weight: bold;
+        }
+
+        .traditional-feature {
+            color: #ff6b6b;
         }
 
         /* About Section */
@@ -398,6 +687,77 @@
             align-items: center;
             justify-content: center;
             font-size: 0.8rem;
+        }
+
+        /* Interactive Timeline */
+        .timeline-section {
+            background: linear-gradient(135deg, #000, #001122);
+            padding: 5rem 2rem;
+            margin: 3rem 0;
+            border-radius: 20px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #00f5ff, #0080ff);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 30px;
+            position: relative;
+            margin: 2rem 0;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(even) {
+            align-self: flex-end;
+            justify-content: flex-start;
+            padding-left: 30px;
+            padding-right: 0;
+        }
+
+        .timeline-content {
+            background: rgba(0, 245, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            transition: all 0.3s ease;
+            max-width: 300px;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05);
+            border-color: #00f5ff;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #00f5ff;
+            border-radius: 50%;
+            top: 1.5rem;
+            border: 4px solid #000;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 0;
         }
 
         /* Testimonial Section */
@@ -519,6 +879,7 @@
             background: rgba(0, 245, 255, 0.1);
             transform: translateY(-3px);
         }
+
         /* Contact Section */
         .contact-form {
             max-width: 600px;
@@ -591,7 +952,7 @@
         }
 
         /* Mobile Responsiveness */
-            @media (max-width: 768px) {
+        @media (max-width: 768px) {
             .cta-title {
                 font-size: 2.2rem;
             }
@@ -626,10 +987,103 @@
                 font-size: 0.8rem;
                 padding: 0.6rem 1.2rem;
             }
+
+            .architecture-flow {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .arch-node::after {
+                content: '↓';
+                right: 50%;
+                bottom: -1.5rem;
+                top: auto;
+                transform: translateX(50%);
+            }
+
+            .comparison-header,
+            .comparison-row {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+
+            .timeline-item:nth-child(even) {
+                padding-left: 50px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+
+            .timeline-dot {
+                left: 20px;
+                transform: none;
+            }
+
+            .flow-step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .flow-step::after {
+                bottom: -1.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Progress Indicator */
+        .progress-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #00f5ff, #0080ff);
+            z-index: 9999;
+            transition: width 0.3s ease;
+        }
+
+        /* Pulse Animation for Important Elements */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 245, 255, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 245, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 245, 255, 0);
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Progress Indicator -->
+    <div class="progress-indicator" id="progressBar"></div>
+
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
@@ -649,9 +1103,41 @@
         <div class="hero-content">
             <h1>iOS Apps Built by AI</h1>
             <p>We build, publish, and market iOS apps for solopreneurs using cutting-edge AI agents. Focus on your idea while we handle everything else.</p>
-            <a href="#contact" class="cta-button">Start Your App Journey</a>
+            <a href="#contact" class="cta-button pulse">Start Your App Journey</a>
             <div class="yc-badge">
                 Backed by <span class="yc-logo">Y</span> Combinator
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Diagram Section -->
+    <section class="architecture-diagram animate-on-scroll">
+        <h2 class="section-title">How Our AI System Works</h2>
+        <div class="architecture-flow">
+            <div class="arch-node">
+                <div class="arch-icon">💡</div>
+                <h3>Your Idea</h3>
+                <p>Submit your app concept</p>
+            </div>
+            <div class="arch-node">
+                <div class="arch-icon">🤖</div>
+                <h3>AI Analysis</h3>
+                <p>Our AI analyzes requirements</p>
+            </div>
+            <div class="arch-node">
+                <div class="arch-icon">🎨</div>
+                <h3>Design Generation</h3>
+                <p>Automated Figma designs</p>
+            </div>
+            <div class="arch-node">
+                <div class="arch-icon">⚙️</div>
+                <h3>Code Development</h3>
+                <p>AI writes Swift/SwiftUI</p>
+            </div>
+            <div class="arch-node">
+                <div class="arch-icon">📱</div>
+                <h3>App Store Ready</h3>
+                <p>Published & marketed</p>
             </div>
         </div>
     </section>
@@ -676,6 +1162,50 @@
                 <div class="stat-card animate-on-scroll">
                     <span class="stat-number">1200+</span>
                     <div class="stat-label">Paying Customers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <div class="stats-container">
+            <h2 class="section-title animate-on-scroll">SoloLaunch vs Traditional Agencies</h2>
+            <div class="comparison-table animate-on-scroll">
+                <div class="comparison-header">
+                    <div>Feature</div>
+                    <div>SoloLaunch</div>
+                    <div>Traditional Agency</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature-name">Development Time</div>
+                    <div class="sololaunch-feature">1-2 weeks</div>
+                    <div class="traditional-feature">3-6 months</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature-name">Cost</div>
+                    <div class="sololaunch-feature">$500</div>
+                    <div class="traditional-feature">$10K-$40K</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature-name">App Store Publishing</div>
+                    <div class="sololaunch-feature">✓ Included</div>
+                    <div class="traditional-feature">❌ Extra cost</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature-name">Marketing Support</div>
+                    <div class="sololaunch-feature">✓ TikTok included</div>
+                    <div class="traditional-feature">❌ Not included</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature-name">Payment Integration</div>
+                    <div class="sololaunch-feature">✓ Pre-built</div>
+                    <div class="traditional-feature">❌ Custom dev needed</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature-name">Revisions</div>
+                    <div class="sololaunch-feature">✓ AI-powered iterations</div>
+                    <div class="traditional-feature">❌ Expensive changes</div>
                 </div>
             </div>
         </div>
@@ -718,6 +1248,55 @@
         </div>
     </section>
 
+    <!-- Process Flow Diagram -->
+    <section class="process-flow-diagram animate-on-scroll">
+        <h2 class="section-title">Detailed Development Process</h2>
+        <div class="flow-container">
+            <div class="flow-step">
+                <div class="flow-icon">📝</div>
+                <div class="flow-content">
+                    <h3>Requirements Gathering</h3>
+                    <p>Our AI conducts an intelligent analysis of your app idea, target audience, and feature requirements. We identify the core functionality and create a comprehensive development roadmap.</p>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-icon">🎨</div>
+                <div class="flow-content">
+                    <h3>AI-Generated Design</h3>
+                    <p>Advanced design algorithms create professional Figma mockups with modern UI/UX patterns. Every screen is optimized for iOS guidelines and user engagement.</p>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-icon">💻</div>
+                <div class="flow-content">
+                    <h3>Code Generation</h3>
+                    <p>Our proprietary AI writes clean, optimized Swift and SwiftUI code. The app is built with scalability, performance, and App Store guidelines in mind.</p>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-icon">🔧</div>
+                <div class="flow-content">
+                    <h3>Integration & Testing</h3>
+                    <p>Payment systems, analytics, and cloud services are automatically integrated. Comprehensive testing ensures bug-free performance across all iOS devices.</p>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-icon">🚀</div>
+                <div class="flow-content">
+                    <h3>App Store Deployment</h3>
+                    <p>We handle the entire App Store submission process, from metadata optimization to review approval. Your app goes live with zero effort from you.</p>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-icon">📈</div>
+                <div class="flow-content">
+                    <h3>Marketing Launch</h3>
+                    <p>Organic TikTok marketing campaigns drive initial downloads. We create engaging content that showcases your app's unique value proposition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Process Section -->
     <section id="process">
         <h2 class="section-title animate-on-scroll">Our Simple Process</h2>
@@ -741,6 +1320,57 @@
                 <div class="step-number">4</div>
                 <h3>Marketing & Growth</h3>
                 <p>Launch with organic TikTok marketing and ongoing support to maximize your app's success.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="stats-container">
+            <h2 class="section-title animate-on-scroll">Our Journey & Milestones</h2>
+            <div class="timeline">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Founded SoloLaunch</h3>
+                        <p>Started with a vision to democratize app development using AI technology.</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>First AI Agent Development</h3>
+                        <p>Built our proprietary AI system capable of generating iOS apps from ideas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>5 Successful Apps Built</h3>
+                        <p>Validated our approach by building and launching 5 profitable iOS apps.</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>$30K ARR Achieved</h3>
+                        <p>Reached $30,000 in annual recurring revenue from our app portfolio.</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Y Combinator Backing</h3>
+                        <p>Secured investment from Y Combinator to scale our AI platform.</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>500K+ TikTok Views</h3>
+                        <p>Mastered TikTok marketing, generating massive organic reach for our apps.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -860,6 +1490,14 @@
     </footer>
 
     <script>
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -886,13 +1524,13 @@
         window.addEventListener('scroll', animateOnScroll);
         animateOnScroll(); // Run once on load
 
-        // Form submission (you'll need to implement backend)
+        // Form submission
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your interest! We\'ll contact you within 24 hours to discuss your app idea.');
         });
 
-        // Add some interactive elements
+        // Enhanced hover effects
         document.querySelectorAll('.feature-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-10px) scale(1.02)';
@@ -901,6 +1539,53 @@
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(-5px) scale(1)';
             });
+        });
+
+        // Interactive timeline dots
+        document.querySelectorAll('.timeline-dot').forEach(dot => {
+            dot.addEventListener('click', function() {
+                this.style.transform = 'translateX(-50%) scale(1.5)';
+                setTimeout(() => {
+                    this.style.transform = 'translateX(-50%) scale(1)';
+                }, 200);
+            });
+        });
+
+        // Stats counter animation
+        const animateStats = () => {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent.replace(/\D/g, ''));
+                const suffix = stat.textContent.replace(/[0-9]/g, '');
+                let current = 0;
+                const increment = target / 100;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        stat.textContent = Math.floor(current) + suffix;
+                        setTimeout(updateCounter, 20);
+                    } else {
+                        stat.textContent = target + suffix;
+                    }
+                };
+                
+                updateCounter();
+            });
+        };
+
+        // Trigger stats animation when in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.target.classList.contains('stats-grid')) {
+                    animateStats();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.querySelectorAll('.stats-grid').forEach(grid => {
+            observer.observe(grid);
         });
     </script>
 </body>
