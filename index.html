@@ -283,23 +283,23 @@
 
         .architecture-flow {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             flex-wrap: nowrap;
-            gap: 0.5rem;
+            gap: 0.8rem;
             margin-top: 2rem;
-            overflow-x: auto;
-            padding: 0 1rem;
+            width: 100%;
         }
 
         .arch-node {
             background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(0, 128, 255, 0.1));
             border: 2px solid rgba(0, 245, 255, 0.3);
             border-radius: 12px;
-            padding: 1rem;
+            padding: 0.8rem;
             text-align: center;
-            width: 140px;
-            min-width: 140px;
+            flex: 1;
+            max-width: 180px;
+            min-width: 120px;
             position: relative;
             transition: all 0.3s ease;
         }
@@ -823,6 +823,7 @@
             justify-content: flex-start;
             padding-left: 30px;
             padding-right: 0;
+            margin-left: 50%;
         }
 
         .timeline-content {
@@ -841,14 +842,18 @@
 
         .timeline-dot {
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            right: -10px;
+            top: 1.5rem;
             width: 20px;
             height: 20px;
             background: #00f5ff;
             border-radius: 50%;
-            top: 1.5rem;
             border: 4px solid #000;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -10px;
+            right: auto;
         }
 
         .timeline-item:nth-child(even) .timeline-content {
