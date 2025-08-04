@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<!-- Process Section -->
+    <section id="process">
+        <h2 class="section-title animate-on-scroll">Our Simple Process</h2>
+        
+        <!-- Animated Process Diagram -->
+        <div class="process-diagram animate-on-scroll">
+            <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,6 +23,13 @@
             color: #fff;
             overflow-x: hidden;
             line-height: 1.6;
+            transition: all 0.5s ease;
+        }
+
+        /* Light theme variables */
+        body.light-theme {
+            background: #ffffff;
+            color: #333333;
         }
 
         /* Navigation */
@@ -28,6 +41,342 @@
             backdrop-filter: blur(10px);
             z-index: 1000;
             transition: all 0.3s ease;
+        }
+
+        .light-theme .cta-secondary {
+            border-color: #0080ff;
+            color: #0080ff;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.3);
+        }
+
+        .cta-secondary:hover {
+            background: rgba(0, 245, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .light-theme .cta-secondary:hover {
+            background: rgba(0, 128, 255, 0.1);
+        }
+
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #00f5ff;
+        }
+
+        .light-theme .form-group label {
+            color: #0080ff;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 245, 255, 0.1);
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .light-theme .form-group input,
+        .light-theme .form-group textarea {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 128, 255, 0.3);
+            color: #333;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #00f5ff;
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+            transform: scale(1.02);
+        }
+
+        .light-theme .form-group input:focus,
+        .light-theme .form-group textarea:focus {
+            border-color: #0080ff;
+            box-shadow: 0 0 20px rgba(0, 128, 255, 0.2);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(45deg, #00f5ff, #0080ff);
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(0, 245, 255, 0.3);
+            position: relative;
+        }
+
+        .light-theme footer {
+            background: #f8fafc;
+            color: #333;
+            border-top: 1px solid rgba(0, 128, 255, 0.3);
+        }
+
+        /* Floating Action Animations */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #00f5ff, #0080ff);
+            z-index: 10000;
+            transition: width 0.1s ease;
+        }
+
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Enhanced slide animations */
+        .slide-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-left.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-right.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.8s ease;
+        }
+
+        .scale-in.animated {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .cta-title {
+                font-size: 2.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .yc-badge {
+                font-size: 0.8rem;
+                padding: 0.6rem 1.2rem;
+            }
+
+            .process-flow {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .process-arrow {
+                width: 3px;
+                height: 50px;
+                margin: 1rem 0;
+                background: linear-gradient(180deg, #00f5ff, #0080ff);
+            }
+
+            .process-arrow::after {
+                top: auto;
+                bottom: -8px;
+                left: -5px;
+                right: auto;
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-top: 12px solid #0080ff;
+            }
+        }
+
+        /* Advanced hover effects */
+        .magnetic {
+            transition: transform 0.3s ease;
+        }
+
+        .magnetic:hover {
+            transform: translateZ(20px);
+        }
+
+        /* Particle system for background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(0, 245, 255, 0.6);
+            border-radius: 50%;
+            animation: particleMove 15s linear infinite;
+        }
+
+        @keyframes particleMove {
+            0% {
+                transform: translateY(100vh) translateX(-10px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(10px);
+                opacity: 0;
+            }
+        }
+
+        /* Success checkmark animation */
+        .success-check {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #00ff80;
+            border-radius: 50%;
+            position: relative;
+            margin-right: 10px;
+        }
+
+        .success-check::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 6px;
+            width: 6px;
+            height: 10px;
+            border: solid #00ff80;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            animation: checkmark 0.6s ease-in-out;
+        }
+
+        @keyframes checkmark {
+            0% {
+                height: 0;
+            }
+            50% {
+                height: 5px;
+            }
+            100% {
+                height: 10px;
+            }
+        }theme nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
 
         .nav-container {
@@ -61,6 +410,10 @@
             position: relative;
         }
 
+        .light-theme .nav-links a {
+            color: #333;
+        }
+
         .nav-links a:hover {
             color: #00f5ff;
         }
@@ -80,7 +433,25 @@
             width: 100%;
         }
 
-        /* Hero Section */
+        /* Theme toggle button */
+        .theme-toggle {
+            background: linear-gradient(45deg, #00f5ff, #0080ff);
+            border: none;
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-left: 1rem;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 245, 255, 0.3);
+        }
+
+        /* Hero Section - Keep Dark */
         .hero {
             height: 100vh;
             display: flex;
@@ -199,6 +570,7 @@
             padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
+            transition: all 0.5s ease;
         }
 
         .section-title {
@@ -211,18 +583,53 @@
             background-clip: text;
         }
 
+        .light-theme .section-title {
+            background: linear-gradient(45deg, #0080ff, #333);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         /* Stats Section */
         .stats {
             background: linear-gradient(135deg, #001122, #000);
             margin: 0;
             max-width: 100%;
             padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .light-theme .stats {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+        }
+
+        /* Animated background particles */
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(0, 245, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 128, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(0, 255, 128, 0.1) 0%, transparent 50%);
+            animation: particleFloat 15s ease-in-out infinite;
+        }
+
+        @keyframes particleFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
         }
 
         .stats-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
+            position: relative;
+            z-index: 2;
         }
 
         .stats-grid {
@@ -235,15 +642,50 @@
         .stat-card {
             background: rgba(0, 245, 255, 0.1);
             padding: 2rem;
-            border-radius: 10px;
+            border-radius: 20px;
             text-align: center;
             border: 1px solid rgba(0, 245, 255, 0.3);
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .light-theme .stat-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 128, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 245, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .stat-card:hover::before {
+            animation: shimmer 1.5s ease-in-out;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
         }
 
         .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.2);
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 245, 255, 0.3);
+        }
+
+        .light-theme .stat-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 128, 255, 0.2);
         }
 
         .stat-number {
@@ -251,11 +693,67 @@
             font-weight: bold;
             color: #00f5ff;
             display: block;
+            animation: countUp 2s ease-out;
+        }
+
+        .light-theme .stat-number {
+            color: #0080ff;
+        }
+
+        @keyframes countUp {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         .stat-label {
             margin-top: 0.5rem;
             opacity: 0.8;
+        }
+
+        /* Process Section with Animated Diagram */
+        .process-diagram {
+            margin: 3rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .process-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .process-arrow {
+            flex: 1;
+            height: 3px;
+            background: linear-gradient(90deg, #00f5ff, #0080ff);
+            margin: 0 1rem;
+            position: relative;
+            animation: flowAnimation 3s ease-in-out infinite;
+        }
+
+        .light-theme .process-arrow {
+            background: linear-gradient(90deg, #0080ff, #00bcd4);
+        }
+
+        .process-arrow::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: -5px;
+            width: 0;
+            height: 0;
+            border-left: 12px solid #0080ff;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+
+        @keyframes flowAnimation {
+            0%, 100% { opacity: 0.6; transform: scaleX(1); }
+            50% { opacity: 1; transform: scaleX(1.1); }
         }
 
         /* Features Grid */
@@ -269,22 +767,49 @@
         .feature-card {
             background: linear-gradient(135deg, #001122, #000);
             padding: 2rem;
-            border-radius: 15px;
+            border-radius: 20px;
             border: 1px solid rgba(0, 245, 255, 0.3);
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .light-theme .feature-card {
+            background: linear-gradient(135deg, #ffffff, #f8fafc);
+            border: 1px solid rgba(0, 128, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px) rotateX(5deg);
             border-color: #00f5ff;
-            box-shadow: 0 15px 40px rgba(0, 245, 255, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 245, 255, 0.3);
+        }
+
+        .light-theme .feature-card:hover {
+            box-shadow: 0 25px 50px rgba(0, 128, 255, 0.2);
         }
 
         .feature-icon {
             width: 60px;
             height: 60px;
             background: linear-gradient(45deg, #00f5ff, #0080ff);
-            border-radius: 12px;
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -294,27 +819,22 @@
             color: #000;
             position: relative;
             overflow: hidden;
+            animation: iconPulse 3s ease-in-out infinite;
         }
 
-        .feature-icon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .feature-card:hover .feature-icon::before {
-            left: 100%;
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
         .feature-card h3 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
             color: #00f5ff;
+        }
+
+        .light-theme .feature-card h3 {
+            color: #0080ff;
         }
 
         /* Process Section */
@@ -328,6 +848,24 @@
         .process-step {
             text-align: center;
             position: relative;
+            animation: stepAnimation 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .process-step:nth-child(1) { animation-delay: 0.2s; }
+        .process-step:nth-child(2) { animation-delay: 0.4s; }
+        .process-step:nth-child(3) { animation-delay: 0.6s; }
+        .process-step:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes stepAnimation {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
         .step-number {
@@ -342,11 +880,38 @@
             font-weight: bold;
             color: #000;
             margin: 0 auto 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-number::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .process-step:hover .step-number {
+            transform: scale(1.2) rotateY(180deg);
         }
 
         .process-step h3 {
             margin-bottom: 1rem;
             color: #00f5ff;
+        }
+
+        .light-theme .process-step h3 {
+            color: #0080ff;
         }
 
         /* About Section */
@@ -355,12 +920,38 @@
             margin: 0;
             max-width: 100%;
             padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .light-theme .about {
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+        }
+
+        /* Animated tech icons floating */
+        .about::before {
+            content: '⚡ 🤖 📱 💡 🚀 ⭐';
+            position: absolute;
+            top: 20%;
+            left: 0;
+            width: 100%;
+            font-size: 2rem;
+            opacity: 0.1;
+            animation: techFloat 20s linear infinite;
+            white-space: nowrap;
+        }
+
+        @keyframes techFloat {
+            from { transform: translateX(-100vw); }
+            to { transform: translateX(100vw); }
         }
 
         .about-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
+            position: relative;
+            z-index: 2;
         }
 
         .about-content {
@@ -378,8 +969,16 @@
         .about-highlights {
             background: rgba(0, 245, 255, 0.1);
             padding: 2rem;
-            border-radius: 15px;
+            border-radius: 20px;
             border: 1px solid rgba(0, 245, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .light-theme .about-highlights {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 128, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
 
         .highlight-item {
@@ -387,6 +986,26 @@
             align-items: center;
             margin-bottom: 1rem;
             gap: 1rem;
+            opacity: 0;
+            animation: highlightSlideIn 0.6s ease-out forwards;
+        }
+
+        .highlight-item:nth-child(1) { animation-delay: 0.1s; }
+        .highlight-item:nth-child(2) { animation-delay: 0.2s; }
+        .highlight-item:nth-child(3) { animation-delay: 0.3s; }
+        .highlight-item:nth-child(4) { animation-delay: 0.4s; }
+        .highlight-item:nth-child(5) { animation-delay: 0.5s; }
+        .highlight-item:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes highlightSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .highlight-icon {
@@ -398,6 +1017,12 @@
             align-items: center;
             justify-content: center;
             font-size: 0.8rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
 
         /* Testimonial Section */
@@ -406,12 +1031,43 @@
             margin: 0;
             max-width: 100%;
             padding: 5rem 0;
+            position: relative;
+        }
+
+        .light-theme .testimonials {
+            background: linear-gradient(135deg, #fafafa, #f0f4f8);
+        }
+
+        /* Star field animation */
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #00f5ff, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(0, 245, 255, 0.8), transparent),
+                radial-gradient(1px 1px at 90px 40px, #0080ff, transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(0, 128, 255, 0.8), transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: starfield 20s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes starfield {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100px); }
         }
 
         .testimonials-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
+            position: relative;
+            z-index: 2;
         }
 
         .testimonial-grid {
@@ -424,16 +1080,27 @@
         .testimonial-card {
             background: rgba(0, 245, 255, 0.05);
             padding: 2rem;
-            border-radius: 15px;
+            border-radius: 20px;
             border: 1px solid rgba(0, 245, 255, 0.2);
             position: relative;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+        }
+
+        .light-theme .testimonial-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 128, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .testimonial-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0, 245, 255, 0.4);
-            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.1);
+            transform: translateY(-10px) rotateX(5deg);
+            border-color: rgba(0, 245, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 245, 255, 0.2);
+        }
+
+        .light-theme .testimonial-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 128, 255, 0.15);
         }
 
         .testimonial-text {
@@ -441,12 +1108,31 @@
             margin-bottom: 1rem;
             line-height: 1.6;
             color: #e0e0e0;
+            position: relative;
+        }
+
+        .light-theme .testimonial-text {
+            color: #555;
+        }
+
+        .testimonial-text::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            color: rgba(0, 245, 255, 0.3);
+            font-family: serif;
         }
 
         .testimonial-author {
             color: #00f5ff;
             font-weight: 600;
             font-size: 0.9rem;
+        }
+
+        .light-theme .testimonial-author {
+            color: #0080ff;
         }
 
         .testimonial-role {
@@ -460,12 +1146,37 @@
             background: linear-gradient(45deg, #001122, #000511);
             padding: 5rem 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .light-theme .cta-section {
+            background: linear-gradient(45deg, #f8fafc, #e2e8f0);
+        }
+
+        /* Animated gradient orbs */
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 245, 255, 0.1) 0%, transparent 70%);
+            animation: orbRotate 15s linear infinite;
+        }
+
+        @keyframes orbRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .cta-content {
             max-width: 800px;
             margin: 0 auto;
             padding: 0 2rem;
+            position: relative;
+            z-index: 2;
         }
 
         .cta-title {
@@ -475,6 +1186,19 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: titlePulse 3s ease-in-out infinite;
+        }
+
+        .light-theme .cta-title {
+            background: linear-gradient(45deg, #0080ff, #00bcd4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .cta-subtitle {
@@ -498,6 +1222,23 @@
             border-radius: 50px;
             font-weight: bold;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-primary:hover::before {
+            left: 100%;
         }
 
         .cta-secondary {
@@ -510,398 +1251,4 @@
             transition: all 0.3s ease;
         }
 
-        .cta-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.3);
-        }
-
-        .cta-secondary:hover {
-            background: rgba(0, 245, 255, 0.1);
-            transform: translateY(-3px);
-        }
-        /* Contact Section */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #00f5ff;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(0, 245, 255, 0.1);
-            border: 1px solid rgba(0, 245, 255, 0.3);
-            border-radius: 5px;
-            color: #fff;
-            font-size: 1rem;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #00f5ff;
-            box-shadow: 0 0 10px rgba(0, 245, 255, 0.3);
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(45deg, #00f5ff, #0080ff);
-            color: #000;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(0, 245, 255, 0.3);
-        }
-
-        /* Footer */
-        footer {
-            background: #000;
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid rgba(0, 245, 255, 0.3);
-        }
-
-        /* Animations */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .animate-on-scroll.animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Mobile Responsiveness */
-            @media (max-width: 768px) {
-            .cta-title {
-                font-size: 2.2rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .yc-badge {
-                font-size: 0.8rem;
-                padding: 0.6rem 1.2rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">SoloLaunch</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>iOS Apps Built by AI</h1>
-            <p>We build, publish, and market iOS apps for solopreneurs using cutting-edge AI agents. Focus on your idea while we handle everything else.</p>
-            <a href="#contact" class="cta-button">Start Your App Journey</a>
-            <div class="yc-badge">
-                Backed by <span class="yc-logo">Y</span> Combinator
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stats-container">
-            <h2 class="section-title animate-on-scroll">Proven Results</h2>
-            <div class="stats-grid">
-                <div class="stat-card animate-on-scroll">
-                    <span class="stat-number">60K+</span>
-                    <div class="stat-label">Total Downloads</div>
-                </div>
-                <div class="stat-card animate-on-scroll">
-                    <span class="stat-number">$30K</span>
-                    <div class="stat-label">Annual Recurring Revenue</div>
-                </div>
-                <div class="stat-card animate-on-scroll">
-                    <span class="stat-number">500K+</span>
-                    <div class="stat-label">TikTok Views</div>
-                </div>
-                <div class="stat-card animate-on-scroll">
-                    <span class="stat-number">1200+</span>
-                    <div class="stat-label">Paying Customers</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features">
-        <h2 class="section-title animate-on-scroll">Why Choose SoloLaunch?</h2>
-        <div class="features-grid">
-            <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">AI</div>
-                <h3>AI-Powered Development</h3>
-                <p>Our in-house AI agents handle coding, design, and development, delivering apps 10x faster than traditional agencies.</p>
-            </div>
-            <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">$</div>
-                <h3>Affordable Pricing</h3>
-                <p>Pay just $500 instead of $10,000-$40,000 that traditional mobile app agencies charge. No hidden costs or maintenance fees.</p>
-            </div>
-            <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">∞</div>
-                <h3>Complete Solution</h3>
-                <p>We handle everything: development, App Store publishing, payment infrastructure, marketing, and organic TikTok promotion.</p>
-            </div>
-            <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">↗</div>
-                <h3>Marketing Included</h3>
-                <p>Our TikTok marketing expertise has generated over 500,000 views, driving organic growth for your app.</p>
-            </div>
-            <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">⚡</div>
-                <h3>Fast Development</h3>
-                <p>While agencies take months, our AI-powered process delivers your app in days, not weeks.</p>
-            </div>
-            <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">↑</div>
-                <h3>Built for Entrepreneurs</h3>
-                <p>Designed specifically for solopreneurs and small businesses who need to move fast and bootstrap their way to success.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section id="process">
-        <h2 class="section-title animate-on-scroll">Our Simple Process</h2>
-        <div class="process-steps">
-            <div class="process-step animate-on-scroll">
-                <div class="step-number">1</div>
-                <h3>Share Your Idea</h3>
-                <p>Tell us about your app concept and target audience. Our AI analyzes your requirements instantly.</p>
-            </div>
-            <div class="process-step animate-on-scroll">
-                <div class="step-number">2</div>
-                <h3>AI Development</h3>
-                <p>Our AI agents create Figma designs, write code, and build your iOS app using proven frameworks.</p>
-            </div>
-            <div class="process-step animate-on-scroll">
-                <div class="step-number">3</div>
-                <h3>App Store Launch</h3>
-                <p>We handle App Store submission, payment integration, and ensure your app meets all Apple guidelines.</p>
-            </div>
-            <div class="process-step animate-on-scroll">
-                <div class="step-number">4</div>
-                <h3>Marketing & Growth</h3>
-                <p>Launch with organic TikTok marketing and ongoing support to maximize your app's success.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="testimonials-container">
-            <h2 class="section-title animate-on-scroll">What Our Clients Say</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-text">
-                        "SoloLaunch turned my idea into a real app in just 2 weeks. The AI development process was incredible to watch - way faster than any agency I've worked with before."
-                    </div>
-                    <div class="testimonial-author">Marcus Chen</div>
-                    <div class="testimonial-role">Fitness Coach & App Entrepreneur</div>
-                </div>
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-text">
-                        "For $500, I got what would have cost me $20K elsewhere. The TikTok marketing they provided got my app featured and downloaded thousands of times."
-                    </div>
-                    <div class="testimonial-author">Sarah Williams</div>
-                    <div class="testimonial-role">Digital Marketing Consultant</div>
-                </div>
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-text">
-                        "The entire process was seamless. They handled everything from design to App Store approval. Now I'm making passive income from my app idea."
-                    </div>
-                    <div class="testimonial-author">David Park</div>
-                    <div class="testimonial-role">Productivity App Creator</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2 class="cta-title animate-on-scroll">Ready to Launch Your App?</h2>
-            <p class="cta-subtitle animate-on-scroll">Join the solopreneurs who've already turned their ideas into profitable iOS apps</p>
-            <div class="cta-buttons animate-on-scroll">
-                <a href="#contact" class="cta-primary">Start Building Now</a>
-                <a href="#about" class="cta-secondary">Learn More</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="about-container">
-            <h2 class="section-title animate-on-scroll">About SoloLaunch</h2>
-            <div class="about-content">
-                <div class="about-text animate-on-scroll">
-                    <p>We're not just another app development agency. We're pioneers in AI-powered app creation, built by entrepreneurs who understand the hustle.</p>
-                    
-                    <p>After building 5 successful iOS apps ourselves and generating $30,000 in ARR with 60,000+ downloads, we realized we could democratize app development for other solopreneurs.</p>
-                    
-                    <p>Traditional agencies are slow, expensive, and out of reach for most entrepreneurs. We're changing that with our AI-first approach that makes professional iOS app development accessible to everyone.</p>
-                    
-                    <p>As AI transforms the job market and pushes more people toward entrepreneurship, we're building the platform that lets anyone turn their idea into a published iOS app instantly.</p>
-                </div>
-                
-                <div class="about-highlights animate-on-scroll">
-                    <div class="highlight-item">
-                        <div class="highlight-icon">✓</div>
-                        <span>5 successful iOS apps built</span>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">✓</div>
-                        <span>$1,500+ revenue from first 3 clients</span>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">✓</div>
-                        <span>AI-powered development pipeline</span>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">✓</div>
-                        <span>Complete marketing solution</span>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">✓</div>
-                        <span>Proven TikTok marketing strategy</span>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">✓</div>
-                        <span>End-to-end app logistics</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2 class="section-title animate-on-scroll">Ready to Launch?</h2>
-        <div class="contact-form animate-on-scroll">
-            <form>
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="app-idea">What's your app idea?</label>
-                    <textarea id="app-idea" name="app-idea" rows="5" placeholder="Tell us what you want to build..." required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Let's Build It</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 SoloLaunch. Building the future of iOS app development with AI.</p>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Animate elements on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.animate-on-scroll');
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('animated');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', animateOnScroll);
-        animateOnScroll(); // Run once on load
-
-        // Form submission (you'll need to implement backend)
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your interest! We\'ll contact you within 24 hours to discuss your app idea.');
-        });
-
-        // Add some interactive elements
-        document.querySelectorAll('.feature-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(-5px) scale(1)';
-            });
-        });
-    </script>
-</body>
-</html>
+        .light-
