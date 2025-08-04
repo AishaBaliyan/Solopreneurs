@@ -284,12 +284,31 @@
             width: 60px;
             height: 60px;
             background: linear-gradient(45deg, #00f5ff, #0080ff);
-            border-radius: 50%;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .feature-card:hover .feature-icon::before {
+            left: 100%;
         }
 
         .feature-card h3 {
@@ -381,6 +400,125 @@
             font-size: 0.8rem;
         }
 
+        /* Testimonial Section */
+        .testimonials {
+            background: linear-gradient(135deg, #000811, #001122);
+            margin: 0;
+            max-width: 100%;
+            padding: 5rem 0;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: rgba(0, 245, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 245, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        .testimonial-author {
+            color: #00f5ff;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-role {
+            color: #888;
+            font-size: 0.8rem;
+            margin-top: 0.2rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(45deg, #001122, #000511);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .cta-title {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #00f5ff, #00ff80);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary {
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #00f5ff, #0080ff);
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary {
+            padding: 1rem 2rem;
+            border: 2px solid #00f5ff;
+            color: #00f5ff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.3);
+        }
+
+        .cta-secondary:hover {
+            background: rgba(0, 245, 255, 0.1);
+            transform: translateY(-3px);
+        }
         /* Contact Section */
         .contact-form {
             max-width: 600px;
@@ -453,7 +591,16 @@
         }
 
         /* Mobile Responsiveness */
-        @media (max-width: 768px) {
+            @media (max-width: 768px) {
+            .cta-title {
+                font-size: 2.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
             .nav-links {
                 display: none;
             }
@@ -539,22 +686,22 @@
         <h2 class="section-title animate-on-scroll">Why Choose SoloLaunch?</h2>
         <div class="features-grid">
             <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">🤖</div>
+                <div class="feature-icon">AI</div>
                 <h3>AI-Powered Development</h3>
                 <p>Our in-house AI agents handle coding, design, and development, delivering apps 10x faster than traditional agencies.</p>
             </div>
             <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">💰</div>
+                <div class="feature-icon">$</div>
                 <h3>Affordable Pricing</h3>
                 <p>Pay just $500 instead of $10,000-$40,000 that traditional mobile app agencies charge. No hidden costs or maintenance fees.</p>
             </div>
             <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">🚀</div>
+                <div class="feature-icon">∞</div>
                 <h3>Complete Solution</h3>
                 <p>We handle everything: development, App Store publishing, payment infrastructure, marketing, and organic TikTok promotion.</p>
             </div>
             <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">📈</div>
+                <div class="feature-icon">↗</div>
                 <h3>Marketing Included</h3>
                 <p>Our TikTok marketing expertise has generated over 500,000 views, driving organic growth for your app.</p>
             </div>
@@ -564,7 +711,7 @@
                 <p>While agencies take months, our AI-powered process delivers your app in days, not weeks.</p>
             </div>
             <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">📱</div>
+                <div class="feature-icon">↑</div>
                 <h3>Built for Entrepreneurs</h3>
                 <p>Designed specifically for solopreneurs and small businesses who need to move fast and bootstrap their way to success.</p>
             </div>
@@ -594,6 +741,48 @@
                 <div class="step-number">4</div>
                 <h3>Marketing & Growth</h3>
                 <p>Launch with organic TikTok marketing and ongoing support to maximize your app's success.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <h2 class="section-title animate-on-scroll">What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-text">
+                        "SoloLaunch turned my idea into a real app in just 2 weeks. The AI development process was incredible to watch - way faster than any agency I've worked with before."
+                    </div>
+                    <div class="testimonial-author">Marcus Chen</div>
+                    <div class="testimonial-role">Fitness Coach & App Entrepreneur</div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-text">
+                        "For $500, I got what would have cost me $20K elsewhere. The TikTok marketing they provided got my app featured and downloaded thousands of times."
+                    </div>
+                    <div class="testimonial-author">Sarah Williams</div>
+                    <div class="testimonial-role">Digital Marketing Consultant</div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-text">
+                        "The entire process was seamless. They handled everything from design to App Store approval. Now I'm making passive income from my app idea."
+                    </div>
+                    <div class="testimonial-author">David Park</div>
+                    <div class="testimonial-role">Productivity App Creator</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title animate-on-scroll">Ready to Launch Your App?</h2>
+            <p class="cta-subtitle animate-on-scroll">Join the solopreneurs who've already turned their ideas into profitable iOS apps</p>
+            <div class="cta-buttons animate-on-scroll">
+                <a href="#contact" class="cta-primary">Start Building Now</a>
+                <a href="#about" class="cta-secondary">Learn More</a>
             </div>
         </div>
     </section>
